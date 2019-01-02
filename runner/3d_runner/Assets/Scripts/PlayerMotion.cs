@@ -30,7 +30,7 @@ public class PlayerMotion : MonoBehaviour
             anim.SetTrigger("idle");    
         }*/
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("jump");
             rb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
