@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/newplayer.unity
+    guid: bdcd8e4dd1174d64db00fb2bee96a944
   m_configObjects: {}

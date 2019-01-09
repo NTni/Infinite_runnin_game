@@ -20,20 +20,26 @@ public class PlayerMotion : MonoBehaviour
     }
     void Start()
     {
-        rb.velocity = Vector3.forward * Speed;
+       
     }
 
     void Update()
     {
-        /*if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            anim.SetTrigger("idle");    
-        }*/
+            anim.SetTrigger("Run");
+            rb.velocity = Vector3.forward * Speed;
+        }
 
-        if (Input.GetMouseButtonDown(0))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             anim.SetTrigger("jump");
             rb.AddForce(Vector3.up * jumpForce,ForceMode.Impulse);
+        }
+
+        else if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            anim.SetTrigger("down");
         }
     }
 }
