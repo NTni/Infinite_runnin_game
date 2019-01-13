@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -157,9 +157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TilePrefabs:
   - {fileID: 6724098311688807582, guid: fa526f6bb67ab8e4f9ee76184174ce70, type: 3}
-  - {fileID: 8945290673193540742, guid: 2e7ed37a5750f4544b010cf626bdb4fc, type: 3}
   - {fileID: 8693334338037992506, guid: 7f9d1713dc142f740a113022f5783e8c, type: 3}
-  - {fileID: 3649859237581517441, guid: 3d63ddc22433a684a949091f521d3661, type: 3}
+  - {fileID: 6724098311688807582, guid: fa526f6bb67ab8e4f9ee76184174ce70, type: 3}
+  - {fileID: 8693334338037992506, guid: 7f9d1713dc142f740a113022f5783e8c, type: 3}
   tileLength: 8
   amnofTilesonScreen: 10
 --- !u!1 &536393359
@@ -243,6 +243,8 @@ GameObject:
   - component: {fileID: 898732647}
   - component: {fileID: 898732646}
   - component: {fileID: 898732649}
+  - component: {fileID: 898732650}
+  - component: {fileID: 898732651}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -267,7 +269,7 @@ Camera:
   m_GameObject: {fileID: 898732645}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
@@ -328,6 +330,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1523860126}
   smoothRate: 100
+--- !u!114 &898732650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898732645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95149f229309ad34384f66a9cb179dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Colors:
+  - {r: 1, g: 1, b: 1, a: 0}
+  - {r: 0, g: 0, b: 0, a: 0}
+  Speed: 1
+  _currentIndex: 0
+--- !u!114 &898732651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898732645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f2f1ca63181944a9ea29071c606a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunEvery: 1
+  RunOnAwake: 0
+  Loop: 1
+  OnTimerEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 898732650}
+        m_MethodName: Cycle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1511714273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -433,7 +483,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 114
   m_CollisionDetection: 0
 --- !u!136 &1523860128
 CapsuleCollider:
